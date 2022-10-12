@@ -66,6 +66,14 @@ Locations.prototype.render = function() {
   section.appendChild(p);
   p.textContent = `This is breif summary of ${this.locationName} branch.`;
 
+  // //img
+  // const setImg = document.createElement('img');
+  // section.appendChild(setImg);
+//   setImg.setAttribute('src', this.imageUrl);
+//   setImg.setAttribute('alt', 'picture of ' + this.name);
+};
+
+Locations.prototype.renderTable = function() {
   //Table starts
   const tableTable = document.createElement('table');
   section.appendChild(tableTable);
@@ -94,13 +102,7 @@ Locations.prototype.render = function() {
   const limaCells = document.createElement('td');
   dataRow.appendChild(limaCells);
   limaCells.textContent = this.calcHourlySales();
-
-  // //img
-  // const setImg = document.createElement('img');
-  // section.appendChild(setImg);
-//   setImg.setAttribute('src', this.imageUrl);
-//   setImg.setAttribute('alt', 'picture of ' + this.name);
-};
+}
 
 function headerRow() {
   const headerRow = document.createElement('tr');
@@ -155,6 +157,4 @@ for (let i = 0; i < cookieStores.length; i++) {
 }
 console.log(cookieStores[0].calcHourlySales());
 
-// for (let i = 0; i < cookieStores.length; i++) {
-
-// }
+renderTable();
