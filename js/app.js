@@ -70,31 +70,6 @@ Locations.prototype.render = function() {
   const tableTable = document.createElement('table');
   section.appendChild(tableTable);
 
-  //Header row
-  const headerRow = document.createElement('tr');
-  tableTable.appendChild(headerRow);
-
-  //Header cells
-  const seattleCell = document.createElement('th');
-  headerRow.appendChild(seattleCell);
-  seattleCell.textContent = 'Seattle';
-
-  const tokyoCell = document.createElement('th');
-  headerRow.appendChild(tokyoCell);
-  tokyoCell.textContent = 'Tokyo';
-
-  const dubaiCell = document.createElement('th');
-  headerRow.appendChild(dubaiCell);
-  dubaiCell.textContent = 'Dubai';
-
-  const parisCell = document.createElement('th');
-  headerRow.appendChild(parisCell);
-  parisCell.textContent = 'Paris';
-
-  const limaCell = document.createElement('th');
-  headerRow.appendChild(limaCell);
-  limaCell.textContent = 'Lima';
-
   //Data row
   const dataRow = document.createElement('tr');
   tableTable.appendChild(dataRow);
@@ -127,6 +102,22 @@ Locations.prototype.render = function() {
 //   setImg.setAttribute('alt', 'picture of ' + this.name);
 };
 
+function headerRow() {
+  const headerRow = document.createElement('tr');
+  tableTable.appendChild(headerRow);
+
+  //Header cells
+  const seattleCell = document.createElement('th');
+  headerRow.appendChild(seattleCell);
+  seattleCell.textContent = 'Seattle';
+}
+
+function footerRow() {
+  let totalInHour = 0;
+  for (let i = 0; i < hours.length; i++) {
+    totalInHour += 
+  }
+}
 // const locationTable = document.querySelector('table');
 // const tableBody = document.querySelector('table tbody');
 
@@ -159,6 +150,11 @@ const lima = new Locations('Lima', 2, 16, 4.6);
 
 for (let i = 0; i < cookieStores.length; i++) {
   cookieStores[i].calcHourlySales();
+  console.log(cookieStores[i].calcHourlySales());
   cookieStores[i].render();
 }
-console.log(cookieStores);
+console.log(cookieStores[0].calcHourlySales());
+
+// for (let i = 0; i < cookieStores.length; i++) {
+
+// }
