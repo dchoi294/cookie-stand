@@ -1,0 +1,47 @@
+/* * {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: beige;
+}
+
+body {
+  background-color: azure;
+}
+
+h1 {
+  font-size: 4rem;
+  padding: 1rem;
+  color: black;
+}
+
+h3 {
+  color: antiquewhite;
+  font-size: 1rem;
+}
+
+ul {
+  margin-left: 1rem;
+  list-style: square;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  margin: 1rem;
+}
+
+td, th {
+  margin: 1rem;
+}
+
+thead th {
+  font-weight: bold;
+}
+
+tfoot {
+  background-color: beige;
+} */
