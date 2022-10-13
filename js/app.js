@@ -53,6 +53,8 @@ Locations.prototype.render = function() {
   const p = document.createElement('p');
   section.appendChild(p);
   p.textContent = `This is breif summary of ${this.locationName} branch.`;
+  const p2 = document.createElement('p');
+  p2.textContent = '';
 
   // //img
   // const setImg = document.createElement('img');
@@ -78,43 +80,60 @@ Locations.prototype.renderTable = function() {
   for(let i = 0; i < this.cookiesSoldEachHours.length; i++) {
     const dataCells = document.createElement('td');
     dataRow.appendChild(dataCells);
-    dataCells.textContent = `${this.cookiesSoldEachHours[i]}`;
+    dataCells.textContent = this.cookiesSoldEachHours[i];
   }
   const totalToday = document.createElement('td');
   dataRow.appendChild(totalToday);
-  totalToday.textContent = `${this.total}`;
+  totalToday.textContent = this.total;
 };
 
 function headerRow() {
   const tableHead = document.getElementById('tableHead');
 
   //Header cells
-  const headRow = document.createElement('tr');
-  tableHead.appendChild(headRow);
-  const openHours = document.createElement('td');
-  headRow.appendChild(openHours);
-  openHours.textContent = '';
+  const headTop = document.createElement('tr');
+  tableHead.appendChild(headTop);
+
+  const headRow = document.createElement('th');
+  headTop.appendChild(headRow);
+  headRow.textContent = '';
+
   for(let i = 0; i < hours.length; i++) {
-    openHours.textContent = hours[i];
+    const headCells = document.createElement('td');
+    headTop.appendChild(headCells);
+    headCells.textContent = hours[i];
     console.log(hours[i]);
   }
+  const total = document.createElement('td');
+  headTop.appendChild(total);
+  total.textContent = 'Daily Location Total';
 }
 
-function footerRow(total) {
+function footerRow() {
   const tableFooter = document.getElementById('tableFoot');
 
   const footerRow = document.createElement('tr');
   tableFooter.appendChild(footerRow);
+  footerRow.textContent = 'Totals';
 
-  const totalEachHours = document.createElement('tf');
-  footerRow.appendChild(totalEachHours);
+  let hourlyTotal = 0;
   let sumBranches = 0;
-  for (let i = 0; i < hours.length; i++) {
-    totalEachHours.textContent = total;
-    sumBranches += total;
+
+  for(let i = 0; i < hours.length; i++) {
+    for(let j = 0; j < cookieStores.length; j++){
+      hourlyTotal += cookieStores[j].hours[i];
+    }
+    console.log(hourlyTotal);
+    for (let k = 0; k < hours.length; k++) {
+      const totalEachHours = document.createElement('td');
+      footerRow.appendChild(totalEachHours);
+      totalEachHours.textContent = hourlyTotal;
+      sumBranches += hourlyTotal;
+    }
   }
-  const totalBranches = document.createElement('tf');
-  totalBranches.textContent = `${sumBranches}`;
+
+  const totalBranches = document.createElement('td');
+  totalBranches.textContent = sumBranches;
 }
 // const locationTable = document.querySelector('table');
 // const tableBody = document.querySelector('table tbody');
@@ -149,8 +168,7 @@ const lima = new Locations('Lima', 2, 16, 4.6);
 headerRow();
 for (let i = 0; i < cookieStores.length; i++) {
   cookieStores[i].calcHourlySales();
-  console.log(cookieStores[i].calcHourlySales());
   cookieStores[i].render();
   cookieStores[i].renderTable();
 }
-footerRow(this.total);
+footerRow();

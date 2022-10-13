@@ -88,10 +88,11 @@ table, td, th {
   border: 1px solid black;
 }
 table {
+  background-color: beige;
   margin: 1rem;
 }
 td, th {
-  padding: 2.7px;
+  padding: 1px;
   margin: 1rem;
 }
 thead th {
