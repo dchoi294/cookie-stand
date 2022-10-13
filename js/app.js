@@ -22,7 +22,7 @@ Locations.prototype.calcHourlySales = function () {
     let randNum = this.randNumCustomers();
     let cookieSoldThisHour = Math.ceil(this.avg * randNum);
     this.cookiesSoldEachHours.push(cookieSoldThisHour);
-    this.total += this.cookiesSoldThisHour;
+    this.total += cookieSoldThisHour;
   }
 };
 
@@ -67,9 +67,6 @@ Locations.prototype.renderTable = function() {
   //Table starts
   const tableTable = document.getElementById('tableTable');
 
-  // const dataHead = document.createElement('th');
-  // tableTable.appendChild(dataHead);
-
   //Data row
   const dataRow = document.createElement('tr');
   tableTable.appendChild(dataRow);
@@ -82,6 +79,7 @@ Locations.prototype.renderTable = function() {
     dataRow.appendChild(dataCells);
     dataCells.textContent = this.cookiesSoldEachHours[i];
   }
+
   const totalToday = document.createElement('td');
   dataRow.appendChild(totalToday);
   totalToday.textContent = this.total;
@@ -102,7 +100,6 @@ function headerRow() {
     const headCells = document.createElement('td');
     headTop.appendChild(headCells);
     headCells.textContent = hours[i];
-    console.log(hours[i]);
   }
   const total = document.createElement('td');
   headTop.appendChild(total);
@@ -118,43 +115,23 @@ function footerRow() {
 
   let hourlyTotal = 0;
   let sumBranches = 0;
-
   for(let i = 0; i < hours.length; i++) {
     for(let j = 0; j < cookieStores.length; j++){
-      hourlyTotal += cookieStores[j].hours[i];
+      hourlyTotal += cookieStores[j].cookiesSoldEachHours[i];
+      console.log(cookieStores[j].cookiesSoldEachHours[i]);
+      sumBranches += cookieStores[j].cookiesSoldEachHours[i];
     }
-    console.log(hourlyTotal);
-    for (let k = 0; k < hours.length; k++) {
-      const totalEachHours = document.createElement('td');
-      footerRow.appendChild(totalEachHours);
-      totalEachHours.textContent = hourlyTotal;
-      sumBranches += hourlyTotal;
-    }
+
+    const totalEachHours = document.createElement('td');
+    footerRow.appendChild(totalEachHours);
+    totalEachHours.textContent = hourlyTotal;
+    hourlyTotal = 0;
   }
 
   const totalBranches = document.createElement('td');
+  footerRow.appendChild(totalBranches);
   totalBranches.textContent = sumBranches;
 }
-// const locationTable = document.querySelector('table');
-// const tableBody = document.querySelector('table tbody');
-
-// const tableHead = document.querySelector('table thead');
-// const tableFooter = document.querySelector('table tfooter');
-
-// Locations.prototype.renderTable = function() {
-//   let tr = document.createElement('tr');
-//   tableBody.appendChild(tr);
-//   let tdName = document.createElement('td');
-//   tdName.textContent = this.name;
-//   tr.appendChild('tdName');
-//   for(let i = 0; i < this.hours.length; i++) {
-//     let td = document.createElement('td');
-//     td.textContent = this.hours[i];
-//     tr.appendChild(td);
-//   }
-// }
-// this.renderTable();
-
 
 let cookieStores = [];
 
