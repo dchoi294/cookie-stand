@@ -1,12 +1,7 @@
-/* * {
+* {
   box-sizing: border-box;
 }
-header {
-  background-color: beige;
-}
-body {
-  background-color: azure;
-}
+
 h1 {
   font-size: 4rem;
   padding: 1rem;
@@ -20,6 +15,75 @@ ul {
   margin-left: 1rem;
   list-style: square;
 }
+
+header {
+  border: 1px solid black;
+  background-color:blanchedalmond;
+}
+
+header nav {
+  width: 960px;
+  margin: auto;
+  display: flex;
+}
+
+header li {
+  margin: 35px 70px auto;
+  display: inline-flex;
+}
+
+body {
+  background-color: azure;
+}
+main {
+  width: 960px;
+  background-color:gray;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+main img {
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+main article {
+  width: 450px;
+}
+
+main article section {
+  overflow: auto;
+  height: 320px;
+}
+
+main article div {
+  font-size: 20px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+main article div:hover {
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  background-color:white;
+}
+
+footer {
+  border: 1px solid black;
+  background-color: darkgray;
+  height: 70px;
+}
+
+
+
 table, td, th {
   border: 1px solid black;
 }
@@ -27,6 +91,7 @@ table {
   margin: 1rem;
 }
 td, th {
+  padding: 2.7px;
   margin: 1rem;
 }
 thead th {
@@ -34,4 +99,4 @@ thead th {
 }
 tfoot {
   background-color: beige;
-} */
+}
