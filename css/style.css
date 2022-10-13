@@ -48,15 +48,19 @@ main {
 main img {
   border: 1px solid black;
   margin-bottom: 30px;
+  display: flex;
 }
 
 h3 {
+  margin:15px auto;
   font-size: 30px;
   font-family: 'Share Tech Mono', monospace;
 }
 
+
 main article {
   width: 450px;
+  margin-bottom: 30px;
 }
 
 main article section {
@@ -66,8 +70,8 @@ main article section {
 
 main article div {
   font-size: 20px;
-  width: 50%;
-  margin: 20px auto;
+  width: 75%;
+  
 }
 
 main article div:hover {
