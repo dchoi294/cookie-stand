@@ -1,13 +1,5 @@
-/* * {
+* {
   box-sizing: border-box;
-}
-
-header {
-  background-color: beige;
-}
-
-body {
-  background-color: azure;
 }
 
 h1 {
@@ -15,33 +7,161 @@ h1 {
   padding: 1rem;
   color: black;
 }
-
 h3 {
   color: antiquewhite;
   font-size: 1rem;
 }
-
 ul {
   margin-left: 1rem;
   list-style: square;
 }
 
+header {
+  border: 1px solid black;
+  background-color:blanchedalmond;
+}
+
+header nav {
+  width: 960px;
+  margin: auto;
+  display: flex;
+}
+
+header img {
+  width: 20%;
+  height: 20%;
+}
+
+header li {
+  margin: 35px 70px auto;
+  display: inline-flex;
+}
+
+body {
+  background-color: gray;
+}
+
+main {
+  width: 960px;
+  background-color:salmon;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.top {
+  width: 960px;
+}
+
+.top img {
+  display: flex;
+  justify-content: center;
+  width: 960px;
+}
+
+.middle img {
+  width: 480px;
+  height: 400px;
+}
+
+.bottom {
+  width: 960px;
+}
+
+.bottom img {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+main img {
+  border: 1px solid black;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 375px;
+}
+
+h3 {
+  margin: 15px auto;
+  font-size: 30px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+main article {
+  width: 450px;
+  overflow: auto;
+  height: 320px;
+}
+
+main article div {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  color:white;
+  width: 35%;
+  text-align: center;
+}
+
+main article div:hover {
+  color: black;
+  font-size: 15px;
+  font-family: 'Dancing Script', cursive;
+  background-color:white;
+}
+
+footer {
+  border: 1px solid black;
+  background-color: darkgray;
+  height: auto;
+}
+
+footer p {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
 table, td, th {
   border: 1px solid black;
 }
-
 table {
-  margin: 1rem;
+  background-color: beige;
+  margin: 5rem;
 }
-
 td, th {
+  padding: 1px;
   margin: 1rem;
 }
-
 thead th {
   font-weight: bold;
 }
-
 tfoot {
   background-color: beige;
-} */
+}
+
+form {
+  width: 300px;
+  margin: auto;
+}
+
+fieldset {
+  border: 1px solid black;
+}
+
+legend {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 15px;
+  font-weight: bold;
+}
+textarea, input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
