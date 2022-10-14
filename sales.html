@@ -3,18 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sales</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales</title>
 </head>
 <body>
   <header>
-    <h1>Sales</h1>
+    <nav>
+      <img src="/img/frosted-cookie.jpg">
+      <h1>Sales</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sales.html">Sales</a></li>
+          <li><a href="">Item 3</a></li>
+        </ul>
+    </nav>
   </header>
   <main>
+    <form id="newBranch">
+      <form>
+      <fieldset>
+        <legend>Add new Branch here!</legend>
+        <label> New Branch Location
+          <input type="text" name="newBranchLocation" placeholder="Location of the new Branch" required>
+        </label>
+        
+        <label> Minimum of Sold
+          <input type="number" name="min" placeholder="ex. 1,2,3...">
+        </label>
+
+        <label> Maximum of Sold
+          <input type="number" name="max" placeholder="ex. 999,9999...">
+        </label>
+
+        <label> Average Sold
+          <input type="number" name="avg" placeholder="ex. 1,2,3...">
+        </label>
+
+        <label> Photo URL
+          <input type="url" name="imgURL">
+        </label>
+
+        <label> Photo Description
+          <input type="text" name="imgALT">
+        </label>
+
+        <label> More Details if necessary
+          <textarea name="details" placeholder="description..."></textarea>
+        </label>
+      </fieldset>
+      <button type="sumbit">Add</button>
+    </form>
+
+    <section>
+      <fieldset>
+        <label>
+          <input >
+        </label>
+
+        <label>
+          <input >
+        </label>
+
+        <label>
+          <input >
+        </label>
+
+        <label>
+          <input >
+        </label>
+
+        <label>
+          <input >
+        </label>
+      </fieldset>
+
+    </section>
     <div id="branches">
-    
+    <table>
+      <thead id="tableHead">
+      </thead>
+      <tbody id="tableTable">
+      </tbody>
+      <tfoot id ="tableFoot">
+      </tfoot>
+    </table>
     </div>
   </main>
   <footer>
