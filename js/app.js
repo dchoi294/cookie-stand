@@ -74,8 +74,13 @@ Locations.prototype.render = function() {
 const tableTable = document.getElementById('tableTable');
 
 Locations.prototype.renderTable = function() {
-  this.calcHourlySales();
+this.calcHourlySales();
   const dataHead = document.createElement('th');
+
+  //Table starts
+  const tableTable = document.getElementById('tableTable');
+
+  //Data row
   const dataRow = document.createElement('tr');
   dataRow.appendChild(dataHead);
   tableTable.appendChild(dataRow);
@@ -123,7 +128,6 @@ function footerRow() {
 
 
   let sumBranches = 0;
-
   for(let i = 0; i < hours.length; i++) {
     let hourlyTotal = 0;
     for(let j = 0; j < cookieStores.length; j++){
@@ -167,7 +171,6 @@ let addBranch = function(event) {
 };
 
 // newBranch.addEventListener('submit', addBranch);
-
 
 //name, min, max, avg, details, total, cookiesSoldEachHours, imgURL, imgALT
 const seattle = new Locations('Seattle', 23, 65, 6.3,'');
