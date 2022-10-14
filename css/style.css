@@ -129,7 +129,7 @@ table, td, th {
 }
 table {
   background-color: beige;
-  margin: 1rem;
+  margin: 5rem;
 }
 td, th {
   padding: 1px;
@@ -140,4 +140,28 @@ thead th {
 }
 tfoot {
   background-color: beige;
+}
+
+form {
+  width: 300px;
+  margin: auto;
+}
+
+fieldset {
+  border: 1px solid black;
+}
+
+legend {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 15px;
+  font-weight: bold;
+}
+textarea, input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
