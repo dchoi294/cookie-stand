@@ -116,6 +116,7 @@ function headerRow() {
   headRow.appendChild(total);
   total.textContent = 'Daily Location Total';
 }
+  tableTable.appendChild(dataRow);
 
 function footerRow() {
   const tableFooter = document.getElementById('tableFoot');
@@ -150,6 +151,24 @@ function footerRow() {
 
 // let newBranch = document.getElementById('newBranch');
 let form = document.querySelector('form');
+function headerRow() {
+  const headerRow = document.createElement('tr');
+  tableTable.appendChild(headerRow);
+
+  //Header cells
+  const seattleCell = document.createElement('th');
+  headerRow.appendChild(seattleCell);
+  seattleCell.textContent = 'Seattle';
+}
+
+function footerRow() {
+  let totalInHour = 0;
+  for (let i = 0; i < hours.length; i++) {
+    totalInHour += 
+  }
+}
+// const locationTable = document.querySelector('table');
+// const tableBody = document.querySelector('table tbody');
 
 let addBranch = function(event) {
   event.preventDefault();
@@ -183,6 +202,12 @@ form.addEventListener('submit', addBranch);
 headerRow();
 for (let i = 0; i < cookieStores.length; i++) {
   cookieStores[i].calcHourlySales();
+  console.log(cookieStores[i].calcHourlySales());
   cookieStores[i].render();
 }
 footerRow();
+console.log(cookieStores[0].calcHourlySales());
+
+// for (let i = 0; i < cookieStores.length; i++) {
+
+// }
